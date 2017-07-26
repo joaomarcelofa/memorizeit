@@ -15,14 +15,29 @@
         android:layout_marginBottom="@dimen/margin_size"
         />
 
-    <ImageView
-        android:id="@+id/randomImageView"
-        android:layout_width="@dimen/image_width"
-        android:layout_height="@dimen/image_height"
-        android:layout_gravity="center"
-        android:background="@color/app_color"
-        >
-    </ImageView>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageFrameLayout">
+
+        <ImageView
+            android:id="@+id/circleBackground"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:background="@drawable/circle"
+            >
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/randomImageView"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
+            android:layout_gravity="center"
+            >
+        </ImageView>
+
+    </FrameLayout>
 
     <TextView
         android:id="@+id/imageNameTextView"
@@ -40,10 +55,10 @@
         android:id="@+id/nextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/next"
         android:layout_marginRight="@dimen/button_margin"
         android:layout_marginLeft="@dimen/button_margin"
         android:layout_marginTop="30dp"
+        android:background="@color/app_color"
         >
 
     </Button>
