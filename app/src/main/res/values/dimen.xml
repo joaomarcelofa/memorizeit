@@ -2,7 +2,7 @@
 <resources>
     <dimen name="text_size">28sp</dimen>
     <dimen name="margin_size">5dp</dimen>
-    <dimen name="image_width">270dp</dimen>
-    <dimen name="image_height">270dp</dimen>
+    <dimen name="image_width">250dp</dimen>
+    <dimen name="image_height">250dp</dimen>
     <dimen name="button_margin">20dp</dimen>
 </resources>

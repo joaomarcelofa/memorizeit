@@ -1,7 +1,9 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
 
-    <solid android:color="@color/app_color"/>
+    <solid
+        android:id="@+id/circleColor"
+        android:color="@color/app_color"/>
     <stroke
         android:width="2dp"
         android:color="#444444"/>

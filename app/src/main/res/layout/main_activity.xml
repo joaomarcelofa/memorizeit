@@ -7,7 +7,6 @@
         android:id="@+id/imageNumberTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/image_number"
         android:textSize="@dimen/text_size"
         android:textColor="@color/black"
         android:textAlignment="center"

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,13 +23,15 @@ public class main extends AppCompatActivity {
     HashMap<Integer,String> guesses; // Used for compare
 
     // Layout Components
-    FrameLayout imageFrameLayout;
+    private FrameLayout imageFrameLayout;
+    private TextView imageNameTextView;
+    private TextView imageNumberTextView;
 
     // I need to think about a name
-    int currentProgress;
+    private int currentProgress;
 
     // Constants
-    private final int MAX = 3;
+    private final int MAX = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +59,9 @@ public class main extends AppCompatActivity {
                 nextImage();
             }
         });
+
+        imageNameTextView = (TextView)findViewById(R.id.imageNameTextView);
+        imageNumberTextView= (TextView)findViewById(R.id.imageNumberTextView);
     }
 
     private void reset(){
@@ -83,7 +89,7 @@ public class main extends AppCompatActivity {
                     Log.i("SUCESS", "IMAGE :" + sortedImage + " " + " / " + String.valueOf(validImages));
                 }
 
-            }while(validImages != 3);
+            }while(validImages != MAX);
 
             Log.i("SUCESS", "Task completed !");
         }
@@ -105,9 +111,14 @@ public class main extends AppCompatActivity {
         String currentImageName = sortedObjects.get(currentProgress);
 
         try{
+            // Opening and setting the image
             stream = asset.open("object_images/" + currentImageName);
             Drawable image = Drawable.createFromStream(stream,currentImageName);
             objectImageView.setImageDrawable(image);
+
+            // Changing the Image Name and Image number in TextView
+            imageNameTextView.setText(currentImageName.substring(0,currentImageName.indexOf('.')));
+            imageNumberTextView.setText("Image " + String.valueOf(currentProgress) + " of " + String.valueOf(MAX));
         }
         catch(IOException e){
             Log.e("ERROR !!" , "Erro de carregamento !", e);

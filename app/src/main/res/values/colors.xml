@@ -5,4 +5,10 @@
     <color name="colorAccent">#FF4081</color>
     <color name="black">#000000</color>
     <color name="app_color">#2F80ED</color>
+    <color-array name="circle_color">
+        <item>#2F80ED</item>
+        <item>#dc143c</item>
+        <item>#00ff55</item>
+        <item>#ffff00</item>
+    </color-array>
 </resources>
